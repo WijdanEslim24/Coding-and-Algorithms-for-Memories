@@ -24,9 +24,9 @@ int findLCS(const string &s1, const string &s2, int t, vector<vector<int>> &dp) 
     dp.assign(m1 + 1, vector<int>(m2 + 1, 0));
     int band = 2 * t + 2; // extra margin // like "hamming distance"
     for (int i = 1; i <= m1; i++) {
-        int jStart = max(1, i - band);
-        int jEnd = min(m2, i + band);
-        for (int j = jStart; j <= jEnd; j++) {
+        int j_start = max(1, i - band);
+        int j_end = min(m2, i + band);
+        for (int j = j_start; j <= j_end; j++) {
             if (s1[i - 1] == s2[j - 1])
                 dp[i][j] = dp[i - 1][j - 1] + 1;
             else
@@ -150,7 +150,7 @@ int main() {
     int t;
     cin >> t;  // Maximum deletions.
 
-    string bestSCS; 
+    string bestSCS;
 
     vector<string> curr_seq = seqs;
     std::sort(curr_seq.begin(), curr_seq.end());
