@@ -160,7 +160,7 @@ int main(){
             {
                 bestSCS = current;
             }
-        } while (std::next_permutation(curr.begin(), curr.end()));
+        } while (std::next_permutation(curr_seq.begin(), curr_seq.end()));
 
         cout << "SCS: " << bestSCS << "\n";
         cout << "SCS Length: " << bestSCS.size() << "\n";
