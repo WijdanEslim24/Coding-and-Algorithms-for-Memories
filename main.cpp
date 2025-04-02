@@ -150,7 +150,7 @@ int main() {
     int t;
     cin >> t;  // Maximum deletions.
 
-    string bestSCS; // Initialize as an empty string
+    string bestSCS; 
 
     vector<string> curr_seq = seqs;
     std::sort(curr_seq.begin(), curr_seq.end());
