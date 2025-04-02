@@ -1,3 +1,0 @@
-C:/Users/win10/CLionProjects/Kidod/cmake-build-debug/CMakeFiles/Kidod.dir
-C:/Users/win10/CLionProjects/Kidod/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/win10/CLionProjects/Kidod/cmake-build-debug/CMakeFiles/rebuild_cache.dir
