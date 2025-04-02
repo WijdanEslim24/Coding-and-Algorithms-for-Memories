@@ -8,7 +8,7 @@ dynamic programming (banded DP - which takes advantage of the input t)** approac
 complexity much better than the naive approach.
 time complexity: O(k! × n × t × k)  while k is the number of sequences in the test.
 
-## Prerequisites
+# Prerequisites
 
 You will need:
 - A C++ compiler 
