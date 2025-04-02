@@ -8,6 +8,7 @@ using namespace std;
 /*
  * Computes the Longest Common Subsequence (LCS) using a banded dynamic programming approach.
  * This is optimized for cases where the two strings are "close" to each other within a bounded edit distance.
+ * close because are result from a length-n sequence with deletions.
  *
  * Parameters:
  *   - s1: First input string.
