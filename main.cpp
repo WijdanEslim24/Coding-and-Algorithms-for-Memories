@@ -139,32 +139,31 @@ string mergeAllSeq(const vector<string> &seqs, int t) {
 }
 
 
-int main(){
-        int k;
-        cin >> k;  // Number of sequences in this test case.
-        vector<string> seqs(k);
-        for (int i = 0; i < k; i++){
-            cin >> seqs[i];
+int main() {
+    int k;
+    cin >> k;  // Number of sequences in this test case.
+    vector<string> seqs(k);
+    for (int i = 0; i < k; i++) {
+        cin >> seqs[i];
+    }
+
+    int t;
+    cin >> t;  // Maximum deletions.
+
+    string bestSCS; // Initialize as an empty string
+
+    vector<string> curr_seq = seqs;
+    std::sort(curr_seq.begin(), curr_seq.end());
+
+    do {
+        string current = mergeAllSeq(curr_seq, t);
+        if (bestSCS.empty() || current.size() < bestSCS.size()) {
+            bestSCS = current;
         }
+    } while (std::next_permutation(curr_seq.begin(), curr_seq.end()));
 
-        int t;
-        cin >> t;  // Maximum deletions.
-
-        string bestSCS = string(10000, '~'); // Start with a very long string. to compair with it
-
-        vector<string> curr_seq = seqs;
-        std::sort(curr_seq.begin(), curr_seq.end());
-
-        do {
-            string current = mergeAllSeq(curr_seq, t);
-            if (current.size() < bestSCS.size())
-            {
-                bestSCS = current;
-            }
-        } while (std::next_permutation(curr_seq.begin(), curr_seq.end()));
-
-        cout << "SCS: " << bestSCS << "\n";
-        cout << "SCS Length: " << bestSCS.size() << "\n";
-        cout << "\n";
+    cout << "SCS: " << bestSCS << "\n";
+    cout << "SCS Length: " << bestSCS.size() << "\n";
+    cout << "\n";
     return 0;
 }
