@@ -19,12 +19,12 @@ using namespace std;
  *   - The length of the LCS.
  */
 int findLCS(const string &s1, const string &s2, int t, vector<vector<int>> &dp) {
-    int m = s1.size(), n = s2.size();
-    dp.assign(m + 1, vector<int>(n + 1, 0));
+    int m1 = s1.size(), m2 = s2.size();
+    dp.assign(m1 + 1, vector<int>(m2 + 1, 0));
     int band = 2 * t + 2; // extra margin // like "hamming distance"
-    for (int i = 1; i <= m; i++) {
+    for (int i = 1; i <= m1; i++) {
         int jStart = max(1, i - band);
-        int jEnd = min(n, i + band);
+        int jEnd = min(m2, i + band);
         for (int j = jStart; j <= jEnd; j++) {
             if (s1[i - 1] == s2[j - 1])
                 dp[i][j] = dp[i - 1][j - 1] + 1;
@@ -32,7 +32,7 @@ int findLCS(const string &s1, const string &s2, int t, vector<vector<int>> &dp) 
                 dp[i][j] = max(dp[i - 1][j], dp[i][j - 1]);
         }
     }
-    return dp[m][n];
+    return dp[m1][m2];
 }
 
 /*
